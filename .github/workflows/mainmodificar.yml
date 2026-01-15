@@ -1,0 +1,29 @@
+name: Modificar Contingut Github
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  modifica_repositori_github:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout del repositori
+        uses: actions/checkout@v4
+
+      - name: Modifica fitxer md
+        run: |
+          echo "- ${{ github.actor }} modifica el repo ${{ github.repository }} : $(date)" >> README.md
+
+      - name: Commit i push
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
+          git add README.md
+          git commit -m "Afegit contingut a README.md"
+          git push
