@@ -1,7 +1,7 @@
 # Projecte Web d'Exemple
 ## Pràctica de desplegament
 
-| **Nom** | **Descripció** |
+| **Macaco** | **MacacoDuplicat** |
 |--------|---------------|
 | ![Imatge 1](/img/imatge.jpeg) | ![Imatge 2](/img/imatge.jpeg) |
 
